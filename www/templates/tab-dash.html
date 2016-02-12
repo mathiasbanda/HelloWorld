@@ -1,0 +1,13 @@
+<ion-view title="Star Wars Films">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <ion-list>
+             <div class="mouseover">
+                  <span class="fake-link">
+                       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="film in films" ui-sref="filmTitle({id:film.id})">{{film.title}}<img ng-src="{{film.avatar}}"><i class="icon ion-chevron-right icon-accessory"></i></ion-item>
+                  </span>
+             </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
+
+href="#/tab/dash"
