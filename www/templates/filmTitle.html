@@ -1,0 +1,35 @@
+<ion-view>
+
+	<ion-nav-title>  
+		{{film.title}}
+	</ion-nav-title>
+	
+       <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <div>
+        	<p><b>Producer:</b> {{film.producer}}</p>
+        	<p><b>Director:</b> {{film.director}}</p>	
+        	<p><b>Release date:</b> {{film.release_date | date:'fullDate'}}</p>
+            <p><b>Opening:</b> {{film.opening_crawl}}</p>
+            <span class="fake-link">
+            	<b>Characters: {{film.charactersCount}}</b>	
+            	<p></p>
+           	</span>
+           	<p>
+           	  <a class="item item-icon-left assertive" href="#">
+    			<i class="icon ion-music-note"></i>
+    			Movie Soundtrack
+    		  </a>
+    		</p>      
+        </div>
+        <button class="button" ng-click="QLiteSave()">
+         Save movie record
+        </button>
+        <p></p>
+    	<p>
+          	<a class="button icon ion-home" href="#/tab/dash"> Home</a>
+        </p>
+      </ion-content>      
+   
+</ion-view> 
+
+
