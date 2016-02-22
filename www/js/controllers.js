@@ -3,7 +3,8 @@ var app= angular.module('starter.controllers', [])
 .controller('usersCtrl', function($scope,DataService) {
 	$scope.users = [];
 	
-	DataService.getUsers().then(function(response) {
+	
+	DataService.xgetUsers().then(function(response) {
 		$scope.users = response;		
 	});
 
@@ -13,9 +14,10 @@ var app= angular.module('starter.controllers', [])
 .controller('starWarsFilmsCtrl', function($scope,DataService) {
 	$scope.films = [];
 	
-	DataService.getFilms().then(function(res) {
+		DataService.getFilms().then(function(res) {
 		$scope.films = res;		
 	});
+	
 
 
  

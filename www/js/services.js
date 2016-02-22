@@ -4,8 +4,7 @@ angular.module('starter.services', [])
 
 	return {
 		getFilms:function() {
-		var deferred = $q.defer();
-			
+		var deferred = $q.defer();		
 			$http.get("http://swapi.co/api/films").then(function(res) {
 					//console.dir(res.data.results);
 					var results = res.data.results.map(function(result) {
@@ -16,10 +15,20 @@ angular.module('starter.services', [])
 					deferred.resolve(res.data.results);
 			});
 			return deferred.promise;
-	
 		},
-		
 		getUsers:function($scope) {
+		    // $http() returns a $promise that we can add handlers with .then()
+		    $http({
+		        method: 'GET',
+		        url: 'http://gk-online-api-uat.elasticbeanstalk.com/api/users/current',
+		        headers: {'Authorization': 'Bearer 6YLullK4nqLjDHd2iqI2J9Pjpz07yaoWKg3cUWsEYsoi4ScdrdAjdXAGefJb5QEFcFRE5Sv7DMHIa9J2yajTy4WidOJDv8skOvHJ0OOAoVONnwKgNo4sDwlIkKdcBv9GQwfcsxwYhhdY0YrPbi1vTSr8c2r3o4WExfOvGqLytn48sRrdhxeEWkzzYjWxofhgdmC5n7rupMnN74YXPS1BvojmKTnYwZ4jKODGJYH9CynMGooFGYzVPCYTp768pF67'}
+		     }).then(function(response) 
+		     {
+		     	return response;
+		     });
+		}
+		,
+		xgetUsers:function($scope) {
 		    // $http() returns a $promise that we can add handlers with .then()
 		    return $http({
 		        method: 'GET',
@@ -37,9 +46,7 @@ angular.module('starter.services', [])
 			deferred.resolve(res.data);
 			});
 			
-			return deferred.promise;
-			
-			
+			return deferred.promise;		
 			
 		}	
 	};

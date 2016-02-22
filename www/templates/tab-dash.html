@@ -1,9 +1,14 @@
 <ion-view title="Star Wars Films">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <label class="item item-input">
+        	<i class="icon ion-search placeholder-icon"></i>
+        	<input type="text" placeholder="Search" data-ng-model="searchFilter">
+      	</label>        
+
         <ion-list>
              <div class="mouseover">
                   <span class="fake-link">
-                       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="film in films" ui-sref="filmTitle({id:film.id})">{{film.title}}<img ng-src="{{film.avatar}}"><i class="icon ion-chevron-right icon-accessory"></i></ion-item>
+                       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="film in films | filter:searchFilter" ui-sref="filmTitle({id:film.id})">{{film.title}}<img ng-src="{{film.avatar}}"><i class="icon ion-chevron-right icon-accessory"></i></ion-item>
                   </span>
              </div>
         </ion-list>
